@@ -3,7 +3,7 @@ import sequelize from "../config/database";
 
 interface MealAttributes {
   id: string;
-  user_id: string;
+  userId: string;
   title: string;
   description?: string;
   date: Date;
@@ -29,7 +29,7 @@ class Meal
   implements MealAttributes
 {
   public id!: string;
-  public user_id!: string;
+  public userId!: string;
   public title!: string;
   public description?: string;
   public date!: Date;
@@ -55,7 +55,7 @@ Meal.init(
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4,
     },
-    user_id: {
+    userId: {
       type: DataTypes.UUID,
       allowNull: false,
     },

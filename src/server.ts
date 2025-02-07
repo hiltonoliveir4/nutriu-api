@@ -7,6 +7,7 @@ import userRouter from './routes/users';
 import mealRouter from './routes/meals';
 import foodRouter from './routes/food/foods';
 import defineAssociations from './models/associations';
+import goalRouter from './routes/goals';
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use('/auth', authRouter);
 app.use('/users', userRouter);
 app.use('/meals', mealRouter);
 app.use('/foods', foodRouter);
+app.use('/goals', goalRouter);
 
 // Página de erro 404 para rotas não encontradas
 app.use((req: Request, res: Response) => {
