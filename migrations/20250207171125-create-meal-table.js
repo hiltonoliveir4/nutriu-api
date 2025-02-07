@@ -18,7 +18,7 @@ module.exports = {
         defaultValue: Sequelize.UUIDV4,
         allowNull: false,
       },
-      user_id: {
+      userId: {
         type: Sequelize.UUID,
         allowNull: false,
         references: {
@@ -45,7 +45,7 @@ module.exports = {
         allowNull: false,
         defaultValue: 'none',
       },
-      day_of_week: {
+      dayOfWeek: {
         type: Sequelize.ENUM('sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'),
         allowNull: true,
       },

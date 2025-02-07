@@ -1,7 +1,6 @@
 import { DataTypes, Model, Optional } from "sequelize";
-import sequelize from "../config/database"; // Certifique-se de que o caminho está correto
+import sequelize from "../config/database";
 
-// Definição dos atributos do usuário
 interface UserAttributes {
   id: string;
   name: string;
@@ -12,10 +11,8 @@ interface UserAttributes {
   updatedAt?: Date;
 }
 
-// Permite que `id` seja opcional na criação
 interface UserCreationAttributes extends Optional<UserAttributes, "id"> {}
 
-// Definição do modelo User
 class User
   extends Model<UserAttributes, UserCreationAttributes>
   implements UserAttributes
@@ -29,7 +26,7 @@ class User
   public readonly updatedAt!: Date;
 }
 
-// Inicialização do modelo no Sequelize
+
 User.init(
   {
     id: {

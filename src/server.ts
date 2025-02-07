@@ -1,37 +1,38 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import sequelize from './config/database'; // Importando a configuração do banco
+import sequelize from './config/database'; 
 import authRouter from './routes/auth';
 import userRouter from './routes/users';
 import mealRouter from './routes/meals';
+import foodRouter from './routes/food/foods';
+import defineAssociations from './models/associations';
 
-dotenv.config(); // Carrega variáveis de ambiente
+dotenv.config();
 
 const app = express();
 
 // Configurações do servidor
-app.use(cors());               // Permitir CORS
-app.use(express.json());        // Para parsear o body das requisições como JSON
+app.use(cors());
+app.use(express.json());
 
 // Rotas
 app.use('/auth', authRouter);
 app.use('/users', userRouter);
 app.use('/meals', mealRouter);
+app.use('/foods', foodRouter);
 
 // Página de erro 404 para rotas não encontradas
 app.use((req: Request, res: Response) => {
   res.status(404).json({ message: 'Route not found' });
 });
 
-// Conectar ao banco de dados e iniciar o servidor
 const startServer = async () => {
   try {
-    // Verificar a conexão com o banco de dados
     await sequelize.authenticate();
     console.log('Database connected successfully!');
 
-    // Sincronizar as tabelas com o banco (caso necessário)
+    defineAssociations();
     await sequelize.sync({ alter: true });
     console.log('Models synchronized successfully!');
 
