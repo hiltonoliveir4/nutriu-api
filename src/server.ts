@@ -35,8 +35,8 @@ const startServer = async () => {
     console.log('Database connected successfully!');
 
     defineAssociations();
-    await sequelize.sync({ alter: true });
-    console.log('Models synchronized successfully!');
+    // await sequelize.sync({ alter: true });
+    // console.log('Models synchronized successfully!');
 
     // Iniciar o servidor
     const port = process.env.PORT || 8000;

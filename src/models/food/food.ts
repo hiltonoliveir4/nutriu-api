@@ -60,6 +60,19 @@ Food.init(
     schema: "food",
     tableName: "foods",
     modelName: "Food",
+    defaultScope: {
+      include: [
+        {
+          model: Category,
+          as: "category",
+          attributes: ["name"],
+        },
+        {
+          model: Nutrient,
+          as: "nutrients",
+        },
+      ],
+    }
   }
 );
 

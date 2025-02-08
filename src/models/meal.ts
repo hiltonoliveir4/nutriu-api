@@ -1,5 +1,6 @@
 import { DataTypes, Model, Optional } from "sequelize";
 import sequelize from "../config/database";
+import Food from "./food/food";
 
 interface MealAttributes {
   id: string;
@@ -134,6 +135,14 @@ Meal.init(
   {
     sequelize,
     tableName: "meals",
+    defaultScope: {
+      include: [
+        {
+          model: Food,
+          as: "foods",
+        },
+      ],
+    }
   }
 );
 
