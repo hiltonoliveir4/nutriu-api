@@ -4,6 +4,7 @@ import Nutrient from "./food/nutrient";
 import User from "./user";
 import Goal from "./goal";
 import Meal from "./meal";
+import MealFoods from "./food/mealFoods";
 
 export default function defineAssociations() {
   Food.belongsTo(Category, {
@@ -17,7 +18,7 @@ export default function defineAssociations() {
   });
 
   Food.belongsToMany(Meal, {
-    through: "meal_foods",
+    through: MealFoods,
     foreignKey: "foodId",
     otherKey: "mealId",
     as: "meals",
@@ -44,7 +45,7 @@ export default function defineAssociations() {
   });
 
   Meal.belongsToMany(Food, {
-    through: "meal_foods",
+    through: MealFoods,
     foreignKey: "mealId",
     otherKey: "foodId",
     as: "foods",
