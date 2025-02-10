@@ -51,7 +51,7 @@ Category.init(
     sequelize,
     schema: "food",
     tableName: "category",
-    modelName: "Category",
+    modelName: "category",
   }
 );
 

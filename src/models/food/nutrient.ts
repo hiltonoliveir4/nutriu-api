@@ -202,7 +202,7 @@ Nutrient.init(
     sequelize,
     schema: "food",
     tableName: "nutrients",
-    modelName: "Nutrient",
+    modelName: "nutrient",
   }
 );
 

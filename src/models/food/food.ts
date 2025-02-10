@@ -59,7 +59,7 @@ Food.init(
     sequelize,
     schema: "food",
     tableName: "foods",
-    modelName: "Food",
+    modelName: "food",
     defaultScope: {
       include: [
         {

@@ -88,7 +88,7 @@ MealFoods.init(
     sequelize,
     schema: "food",
     tableName: "meal_foods",
-    modelName: "MealFoods",
+    modelName: "mealFoods",
   }
 );
 
