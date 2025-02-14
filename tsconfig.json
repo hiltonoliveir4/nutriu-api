@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
-    "module": "commonjs" /* Specify what module code is generated. */,
-    "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
-    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
-    "strict": true, /* Enable all strict type-checking options. */
-    "skipLibCheck": true, /* Skip type checking all .d.ts files. */
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "target": "ES2020", // Define a versão do ECMAScript
+    "module": "commonjs", // Usa CommonJS para compatibilidade com Node.js
+    "outDir": "./dist", // Pasta de saída dos arquivos compilados
+    "rootDir": "./src", // Pasta raiz do código TypeScript
+    "strict": true, // Habilita verificações rigorosas de tipo
+    "esModuleInterop": true, // Permite a interoperabilidade entre CommonJS e ES Modules
+    "skipLibCheck": true, // Ignora a verificação de tipos nas bibliotecas
+    "forceConsistentCasingInFileNames": true // Garante consistência no uso de maiúsculas/minúsculas
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"], // Inclui todos os arquivos na pasta src
+  "exclude": ["node_modules"] //
 }
