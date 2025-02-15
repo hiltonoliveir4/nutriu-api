@@ -5,8 +5,9 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec ts-node src/server.ts"
+    "dev": "nodemon --legacy-watch src/server.ts"
   },
   "repository": {
     "type": "git",

@@ -3,21 +3,21 @@
     "username": "postgres",
     "password": "secret",
     "database": "nutriu",
-    "host": "127.0.0.1",
+    "host": "db",
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
     "password": "secret",
     "database": "nutriu",
-    "host": "127.0.0.1",
+    "host": "db",
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
     "password": "secret",
     "database": "nutriu",
-    "host": "127.0.0.1",
+    "host": "db",
     "dialect": "postgres"
   }
 }

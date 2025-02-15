@@ -5,10 +5,10 @@ import User from '../models/user';
 
 export const registerUser = async (req: Request, res: Response) => {
   try {
-    const { name, email, password, role } = req.body;
+    const { name, email, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
     
-    await User.create({ name, email, password: hashedPassword, role });
+    await User.create({ name, email, password: hashedPassword, role: "admin" });
     req.body.email = email;
     req.body.password = password;
 
@@ -34,7 +34,9 @@ export const loginUser = async (req: Request, res: Response) => {
       expiresIn: '12h',
     });
 
-    res.status(200).json({ message: 'Authenticated', token });
+    const { password: _, ...userWithoutPassword } = user.toJSON();
+
+    res.status(200).json({ message: 'Authenticated', token, user: userWithoutPassword});
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: 'Error during login', error });
