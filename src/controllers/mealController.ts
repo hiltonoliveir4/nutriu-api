@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import Meal from "../models/meal";
-import { validateMeal, validateMealUpdate } from '../validators/mealValidation';
 
 
 export const allMeals = async (req: Request, res: Response) => {

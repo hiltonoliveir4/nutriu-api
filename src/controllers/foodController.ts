@@ -1,9 +1,7 @@
 import { Request, Response } from "express";
-import Food from "../../models/food/food";
-import Category from "../../models/food/category";
-import Nutrient from "../../models/food/nutrient";
-import MealFoods from "../../models/food/mealFoods";
-import Meal from "../../models/meal";
+import Food from "../models/food/food";
+import MealFoods from "../models/food/mealFoods";
+import Meal from "../models/meal";
 
 export const allFoods = async (req: Request, res: Response) => {
   try {

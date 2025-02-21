@@ -1,7 +1,7 @@
 import { Router} from 'express';
-import { addFoodToMeal, allFoods, getFood, updateFoodToMeal } from '../../controllers/food/foodController';
-import authMiddleware from '../../middleware/auth';
-import { validateMealFoods, validateMealFoodsUpdate } from '../../validators/mealFoodsValidation';
+import { addFoodToMeal, allFoods, getFood, updateFoodToMeal } from '../controllers/foodController';
+import authMiddleware from '../middleware/auth';
+import { validateMealFoods, validateMealFoodsUpdate } from '../validators/mealFoodsValidation';
 
 const foodRouter = Router();
 

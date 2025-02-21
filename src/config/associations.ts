@@ -1,10 +1,10 @@
-import Food from "./food/food";
-import Category from "./food/category";
-import Nutrient from "./food/nutrient";
-import User from "./user";
-import Goal from "./goal";
-import Meal from "./meal";
-import MealFoods from "./food/mealFoods";
+import Food from "../models/food/food";
+import Category from "../models/food/category";
+import Nutrient from "../models/food/nutrient";
+import User from "../models/user";
+import Goal from "../models/goal";
+import Meal from "../models/meal";
+import MealFoods from "../models/food/mealFoods";
 
 export default function defineAssociations() {
   Food.belongsTo(Category, {
